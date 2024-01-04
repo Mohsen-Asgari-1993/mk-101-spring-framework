@@ -1,6 +1,6 @@
 package ir.maktabsharif101.spring;
 
-import ir.maktabsharif101.spring.service.UserService;
+import ir.maktabsharif101.spring.service.MySpringBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,9 +16,9 @@ public class SpringFrameworkApplication {
                         SpringFrameworkApplication.class
                 );
 
-        applicationContext.getBean(UserService.class)
-                .getUsers();
-
-        applicationContext.getBean(TestBean.class);
+        applicationContext.getBean(MySpringBean.class)
+                .sendMessage(
+                        "hello"
+                );
     }
 }
