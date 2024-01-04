@@ -1,9 +1,9 @@
 package ir.maktabsharif101.spring.service;
 
 import ir.maktabsharif101.spring.repository.UserRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class UserService {
 
     private final UserRepository userRepository;
