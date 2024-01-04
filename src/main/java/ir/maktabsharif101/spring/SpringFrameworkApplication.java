@@ -1,23 +1,19 @@
 package ir.maktabsharif101.spring;
 
+import ir.maktabsharif101.spring.config.AppConfig;
 import ir.maktabsharif101.spring.service.UserService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class SpringFrameworkApplication {
 
     public static void main(String[] args) {
-
-        /*UserRepository userRepository = new UserRepository();
-        UserService userService = new UserService(userRepository);*/
-
-        ClassPathXmlApplicationContext applicationContext =
-                new ClassPathXmlApplicationContext(
-                        "application-context.xml"
+        ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(
+                        AppConfig.class
                 );
 
-        UserService userService = applicationContext.getBean(UserService.class);
-
-        userService.getUsers();
-
+        applicationContext.getBean(UserService.class)
+                .getUsers();
     }
 }
