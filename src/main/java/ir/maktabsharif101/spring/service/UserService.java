@@ -1,7 +1,9 @@
 package ir.maktabsharif101.spring.service;
 
 import ir.maktabsharif101.spring.repository.UserRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserService {
 
     private final UserRepository userRepository;
@@ -13,6 +15,10 @@ public class UserService {
     public void getUsers() {
         System.out.println("getting users from repository");
         userRepository.getUsers();
+    }
+
+    public void getSingleUser() {
+
     }
 
 }
